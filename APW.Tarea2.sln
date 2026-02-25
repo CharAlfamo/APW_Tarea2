@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36908.2 d17.14
+VisualStudioVersion = 17.14.36908.2
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APW.API", "APW.Tarea2\APW.API.csproj", "{2BCAEBC9-8AAC-442B-BD00-38392F0FDF51}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APW.Repositories", "APW.Repositories\APW.Repositories.csproj", "{5134209A-F963-428A-9FB6-E6DE8B3698FA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APW.Service", "APW.Service\APW.Service.csproj", "{4D300AB8-7BE9-46CA-AE5D-571A7B3E86E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APW.MinimalAPI", "APW.MinimalAPI\APW.MinimalAPI.csproj", "{EC80BA1B-7992-45C0-B8A7-23C4A99B4DC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{4D300AB8-7BE9-46CA-AE5D-571A7B3E86E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D300AB8-7BE9-46CA-AE5D-571A7B3E86E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D300AB8-7BE9-46CA-AE5D-571A7B3E86E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC80BA1B-7992-45C0-B8A7-23C4A99B4DC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC80BA1B-7992-45C0-B8A7-23C4A99B4DC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC80BA1B-7992-45C0-B8A7-23C4A99B4DC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC80BA1B-7992-45C0-B8A7-23C4A99B4DC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
