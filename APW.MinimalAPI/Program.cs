@@ -6,15 +6,12 @@ using TaskEntity = APW.Models.Task;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// DbContext
 builder.Services.AddDbContext<ProductDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Repositorio Task
 builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 
 var app = builder.Build();
@@ -24,32 +21,28 @@ app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
-// =============================
-// MINIMAL API - TASKS
-// =============================
 
-// GET /tasks
 app.MapGet("/tasks", async (ITaskRepository repo) =>
 {
     var tasks = await repo.ReadAllAsync();
     return Results.Ok(tasks);
 });
 
-// GET /tasks/{id}
+
 app.MapGet("/tasks/{id:int}", async (int id, ITaskRepository repo) =>
 {
     var task = await repo.GetByIdAsync(id);
     return task is null ? Results.NotFound() : Results.Ok(task);
 });
 
-// POST /tasks
+
 app.MapPost("/tasks", async (TaskEntity entity, ITaskRepository repo) =>
 {
     var created = await repo.CreateAsync(entity);
     return Results.Created($"/tasks/{created.Id}", created);
 });
 
-// PUT /tasks/{id}
+
 app.MapPut("/tasks/{id:int}", async (int id, TaskEntity entity, ITaskRepository repo) =>
 {
     if (id != entity.Id) return Results.BadRequest("El id del URL no coincide con el body.");
@@ -58,7 +51,7 @@ app.MapPut("/tasks/{id:int}", async (int id, TaskEntity entity, ITaskRepository 
     return ok ? Results.Ok(entity) : Results.NotFound();
 });
 
-// DELETE /tasks/{id}
+
 app.MapDelete("/tasks/{id:int}", async (int id, ITaskRepository repo) =>
 {
     var ok = await repo.DeleteAsync(id);
