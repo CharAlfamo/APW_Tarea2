@@ -10,7 +10,6 @@
     <Compile Remove="Repositories\ComponentRepository.cs" />
     <Compile Remove="Repositories\NotificationRepository.cs" />
     <Compile Remove="Repositories\UserActionRepository.cs" />
-    <Compile Remove="Repositories\UserRoleRepository.cs" />
   </ItemGroup>
 
   <ItemGroup>

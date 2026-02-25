@@ -1,5 +1,12 @@
 ﻿using APW.Models;
 
-namespace APW.Repositories;
+namespace APW.Service.Managers;
 
-public interface IRoleRepository : IBaseRepository<Role> { }
+public interface IRoleManager
+{
+    Task<List<Role>> ReadAllAsync();
+    Task<Role?> GetByIdAsync(int id);
+    Task<Role> CreateAsync(Role entity);
+    Task<bool> UpdateAsync(Role entity);
+    Task<bool> DeleteAsync(int id);
+}
